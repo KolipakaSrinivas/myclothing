@@ -1,5 +1,4 @@
-import { Fragment } from "react"
-
+import React, { Fragment } from 'react'
 
 
 function Filters() {
