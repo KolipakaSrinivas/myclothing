@@ -2,6 +2,13 @@ import React, { Fragment,useState,useEffect } from "react";
 
 
 
+
+
+import Filters from '../filter/Filter.component'
+import Grid from '../grid/grid.components'
+
+import shopData from './shopData'
+
 function Preview() {
 
     //   useState
@@ -10,16 +17,20 @@ function Preview() {
 
     // useEffect
     useEffect(()=>{
-        setData(shopdata)
+        setData(shopData)
     })
+
+    console.log(data)
 
     return(
         <Fragment>
               <section>
                 <Filters/>
-                    <div className="grid">
-                       
-                    </div>
+                    
+                   { data.map((shop)=>(
+                    <Grid key={shop.id} product={shop}/>
+                   ))}
+                    
               </section>
         </Fragment>
     )

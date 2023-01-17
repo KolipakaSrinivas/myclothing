@@ -1,14 +1,22 @@
 import React, { Fragment } from 'react'
 
-function GridItem() {
+
+
+import Card from '../Card/Card.component'
+
+function GridItem({product}) {
+
+    const {items} = product
     return(
         <Fragment>
-            <div className="grid-item">
-                <div className="skeleton">
-                    <div style={{width:"40px"}} className="skeleton">
-                        
-                    </div>
-                </div>
+            <div className="out">
+                <h1>{product.title}</h1>
+            </div>
+
+           <div className="grid">
+            {
+                items.map((items)=>(<Card items={items} key={items.id}/>))
+            }
             </div>
         </Fragment>
     )
