@@ -6,8 +6,7 @@ import './App.css'
 
 
 import Navbar from './components/Navnbar/Navbar.component';
-import Product from './components/products/Prodacts.component';
-import Preview from './components/Preview/Preview.component'
+import HomePage from './pages/HomePage/HomePage.cmponent'
 
 
 function App() {
@@ -15,8 +14,8 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Product/>
-      <Preview/>
+      <HomePage/>
+      
 
     </div>
   )
