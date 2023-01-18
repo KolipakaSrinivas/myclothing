@@ -30,12 +30,17 @@ function Home() {
                         <div className="homepage">
                             <div className='directory-menu'>
                                 {
-                                <div className='menu-item'>
-                                     <div className='content'>      
-                                         <h1 className='title'>jj</h1>
-                                         <span className='subtitle'>Shop Now</span>
-                                     </div>
-                                 </div> 
+                                    shopadata.map(item=>(
+
+                                        <div className='menu-item'>
+                                                <img src={item.imageUrl} style={{width:"200px",position:"absolute"}}/>
+                                            <div className='content'>      
+                                                <h1 className='title'>{item.title}</h1>
+                                                <span className='subtitle'>Shop Now</span>
+                                            </div>
+                                        </div> 
+                                    ))
+                                
                                 }               
                             </div>
                         </div>
