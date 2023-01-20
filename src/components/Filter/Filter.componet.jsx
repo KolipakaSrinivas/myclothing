@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react'
 
 
-function Filters() {
+function Filter() {
     return(
         <Fragment>
-             <aside className="filters">
-        <h2>Filters</h2>
+            <aside className="filters">
+        <h2>filter</h2>
         <label>
           <input type="checkbox" />
-          Trainers
+          Hats
         </label>
         <label>
           <input type="checkbox" />
@@ -31,4 +31,4 @@ function Filters() {
     )
 }
 
-export default Filters
+export default Filter

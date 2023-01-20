@@ -5,16 +5,17 @@ import './App.css'
 
 
 
-import Navbar from './components/Navnbar/Navbar.component';
-import HomePage from './pages/HomePage/HomePage.cmponent'
-
+import Navbar from './components/Navbar/Navbar.component'
+import Home from '../src/components/Home/Home.component'
 
 function App() {
 
   return (
     <div className="App">
       <Navbar/>
-      <HomePage/>
+      <Home/>
+      
+      
       
 
     </div>
