@@ -7,7 +7,10 @@ function CollectionPreview({shop}) {
 
     return(
         <Fragment>
+            <div className='titlel'>
              <h1>{shop.title}</h1>
+
+            </div>
              <div className="grid">
              {
                 shop.items.filter((item,index)=>index < 4).map(item=>(

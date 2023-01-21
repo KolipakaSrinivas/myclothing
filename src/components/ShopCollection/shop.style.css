@@ -1,0 +1,119 @@
+.homepage {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 80px;
+  }
+  
+  .directory-menu {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .menu-item {
+    min-width: 30%;
+    height: 240px;
+    flex: 1 1 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    margin: 0 7.5px 15px;
+  }
+  
+  .menu-item:first-child {
+      margin-right: 7.5px;
+    }
+  
+    .menu-item:last-child {
+      margin-left: 7.5px;
+    }
+  
+    .content {
+      height: 10px;
+      padding: 0 25px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid black;
+  
+    }
+    h2{
+        padding-top: 10px;
+    }
+    .title {
+        font-weight: bold;
+        margin-bottom: 6px;
+        font-size: 22px;
+        color: #4a4a4a;
+      }
+  
+      .subtitle {
+        font-weight: lighter;
+        font-size: 16px;
+      }
+
+
+     
+
+.btn-flip{
+  opacity: 1;
+  outline: 0;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+}
+ 
+  
+
+  .btn-flip:hover:after{
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+  }
+
+  .btn-flip:hover:before{
+    opacity: 0;
+    transform: translateY(50%) rotateX(90deg);
+  }
+  
+  
+  .btn-flip:after{
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    color: #323237;
+    display: block;
+    transition:  0.5s;
+    position: absolute;
+    background: #adadaf;
+    content: attr(data-back);
+    transform: translateY(-50%) rotateX(90deg);
+  }
+  
+  .btn-flip:before{
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: #adadaf;
+    display: block;
+    padding: 0 30px;
+    line-height: 40px;
+    transition: 0.5s;
+    position: relative;
+    /* background: #323237; */
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
+  }
+
+    
+  
