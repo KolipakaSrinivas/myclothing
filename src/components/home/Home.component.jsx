@@ -1,7 +1,8 @@
 import React, { Fragment,useState,useEffect } from 'react';
 
+import axios from 'axios';
 
-import  SHOP_DATA from './shopData'
+
 
 
 
@@ -11,14 +12,28 @@ import CollectionPreview from '../CollectionPreview/CollectionPreview.component'
 
 function Home() {
 
+    
+    // useState
+    const [shopData,setShopData] = useState([])
+
+    const getshopData = async () => {
+        const url = 'http://localhost:4000/api/get-shop-data'
+        const {data} = await  axios.get(url)
+        setShopData(data.data)
+
+    }
+
+        // useEffect
+    useEffect(()=>{
+        getshopData(shopData)
+    },[])
+
+    
 
 
-    const [shopData,setShopData] = useState(SHOP_DATA)
 
+    
 
-    // useEffect(()=>{
-
-    // },[])
     return(
         
 
@@ -30,8 +45,8 @@ function Home() {
                 <Filter/>
                 <div className='main'>
                     {
-                        shopData.map(shop=>(
-                            <CollectionPreview key={shop.id} shop={shop}/>
+                       shopData && shopData.map(shop=>(
+                            <CollectionPreview key={shop.id} shop={shop}  sri={shop._id}/>
                         ))
                     }      
                 </div>

@@ -1,22 +1,51 @@
 import React, { Fragment,useState,useEffect } from 'react'
 
+import axios from 'axios'
+
 
 import './shop.style.css'
 
-import sections from '../ShopCollection/ShopData'
+// import sections from '../ShopCollection/ShopData'
 import ShopItem from '../ShopItem/ShopItem.component'
 
+
+import { useParams } from "react-router-dom";
+
 function ShopCollection() {
+    
+    const {id} = useParams()
+    
+    console.log(id)
+
+    const [collection,setCollection] = useState([])
+
+    let getCollectioDetails = async () => {
+        let url = `http://localhost:4000/api/getshop-DataBy-Id/${id}`;
+        let {data} = await axios.get(url)
+
+        if (data.status === true) {
+            setCollection(data.restaurants.items);
+          } else {
+            setCollection("nooo");
+          }  
+      };
 
 
-    const [collection,setCollection] = useState()
 
-    useEffect(()=>{
-        setCollection(sections)
+      useEffect(()=>{
+        getCollectioDetails()
+      },[])
 
-    },[])
+      console.log(collection)
 
-    console.log(collection)
+
+
+
+
+
+
+
+
     return(
         <Fragment>
             <div className='homepage'>
@@ -30,7 +59,7 @@ function ShopCollection() {
                         <ShopItem key={item.id} item={item}/>
                         
                         ))
-                    }
+                }
                
                 </div>
             </div>

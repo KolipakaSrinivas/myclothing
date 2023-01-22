@@ -3,7 +3,19 @@ import StoreIcon from '@mui/icons-material/Store';
 import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
-function Preview({item}){
+
+
+import { useNavigate } from 'react-router-dom';
+
+
+
+function Preview({item,sri}){
+
+    const navigate =useNavigate()
+
+    console.log(sri)
+
+    
     return(
         <Fragment>
             <div className="grid-item">
@@ -19,7 +31,9 @@ function Preview({item}){
                               <span>Price:{item.price}</span>
                              <span>Name:{item.name}</span>
                         </div> 
-                        <li><StoreIcon/></li>
+                        <li onClick={() => navigate(`/shop/${sri}`)}>
+                            <StoreIcon/>
+                        </li>
                     </div>
             </div>
 
