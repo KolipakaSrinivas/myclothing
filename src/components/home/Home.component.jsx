@@ -16,7 +16,7 @@ function Home() {
 
     const [filterData,setFilterData] = useState({})
 
-    console.log(filterData)
+    // console.log(filterData)
     
     // useState
     

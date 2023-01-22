@@ -15,7 +15,7 @@ function ShopCollection() {
     
     const {id} = useParams()
     
-    console.log(id)
+    
 
     const [collection,setCollection] = useState([])
 
@@ -36,7 +36,7 @@ function ShopCollection() {
         getCollectioDetails()
       },[])
 
-      console.log(collection)
+      
 
 
 

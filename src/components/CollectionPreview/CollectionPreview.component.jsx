@@ -9,8 +9,6 @@ function CollectionPreview({shop,sri}) {
         <Fragment>
             <div className='titlel'>
              <h1>{shop.title}</h1>
-            
-
             </div>
              <div className="grid">
              {
