@@ -1,9 +1,13 @@
 import React, { Fragment } from 'react'
 
 
+
 import Preview from '../Preview/Preview.component'
 
+
 function CollectionPreview({shop,sri}) {
+
+   
 
     return(
         <Fragment>

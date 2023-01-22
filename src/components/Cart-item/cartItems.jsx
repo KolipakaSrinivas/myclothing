@@ -1,14 +1,12 @@
 import React, {useContext} from "react"
-import {Context} from "../../Context"
+
+import {useNavigate} from 'react-router-dom'
 
 import './style.css'
 // import useHover from "../hooks/useHover"
 
-function CartItem() {
-    const {cartItems} = useContext(Context)
-
-    console.log(cartItems)
-    
+function cartItem() {
+   
 
     
 
@@ -31,4 +29,4 @@ function CartItem() {
     )
 }
 
-export default CartItem
+export default cartItem

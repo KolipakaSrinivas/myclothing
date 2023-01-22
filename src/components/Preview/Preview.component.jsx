@@ -97,6 +97,7 @@ function Preview({item,sri}){
 
                         </li>
                     </div>
+                    <button  onClick={()=>navigate('/cart')}>hhh</button>
             </div>
 
             

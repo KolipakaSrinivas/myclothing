@@ -4,7 +4,7 @@ import { Routes,Route } from 'react-router-dom'
 
 
 
-import CartItem from './components/Cart/Cart-temcomponent'
+import CartPage from '../src/components/CartPage/CartPage.component'
 import ShopCollection from './components/ShopCollection/ShopCollection.component'
 import Navbar from './components/Navbar/Navbar.component'
 import Home from '../src/components/Home/Home.component'
@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/shop/:id' element={<ShopCollection/>} />
-        <Route path='/cart' element={<CartItem/>}/>
+        <Route path='/cart' element={< CartPage/>}/>
       </Routes>
       
       
