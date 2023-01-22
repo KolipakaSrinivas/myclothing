@@ -12,15 +12,45 @@ import CollectionPreview from '../CollectionPreview/CollectionPreview.component'
 
 function Home() {
 
+    const [shopData,setShopData] = useState()
+
+    const [filterData,setFilterData] = useState({})
+
+    console.log(filterData)
     
     // useState
-    const [shopData,setShopData] = useState([])
-
+    
     const getshopData = async () => {
         const url = 'http://localhost:4000/api/get-shop-data'
         const {data} = await  axios.get(url)
         setShopData(data.data)
 
+    }
+
+
+    // const filter = async () => {
+    //     const url = "http://localhost:5003/api/filter";
+    //     const { data } = await axios.post(url, filterData);
+    //     if (data.status === true) {
+    //       setRestaurantList();
+    //     } else {
+    //       setRestaurantList([]);
+    //     }
+    //   };
+
+    const getFilterResult = (event,type) => {
+
+        let {value} = event.target
+
+        let _filterObj = {}
+
+        switch(type){
+
+            case "title" :
+                _filterObj['title'] = value
+
+        }
+        setFilterData({_filterObj})    
     }
 
         // useEffect
@@ -42,7 +72,7 @@ function Home() {
 
         
             <section>
-                <Filter/>
+                <Filter getFilterResult={getFilterResult}/>
                 <div className='main'>
                     {
                        shopData && shopData.map(shop=>(
