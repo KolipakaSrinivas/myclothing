@@ -1,4 +1,10 @@
-import React, { Fragment } from 'react'
+import React, { Fragment,useContext } from 'react'
+
+import { Context } from "../../Context"
+
+
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
 
 
 
@@ -6,6 +12,21 @@ import React, { Fragment } from 'react'
 import './shop-item.css'
 
 function ShopItem({item,}) {
+
+    const {removeFromCart,addToCart,cartItems,} = useContext(Context)
+
+
+    function cartIcon() {
+        const alreadyInCart = cartItems.some(kkk => kkk.id === item.id)
+        
+        if(alreadyInCart) {
+            return <ShoppingCartIcon onClick={()=>removeFromCart(item.id)}/>
+    
+        } else{
+    
+            return <ShoppingCartCheckoutOutlinedIcon onClick={() => addToCart(item)}/>
+        }
+    }
 
 
 
@@ -25,6 +46,7 @@ function ShopItem({item,}) {
             <div className='content'>
                <h1 className='title'>Price:{item.price}</h1>
                <h2 className='subtitle'>{item.name}</h2>
+               {cartIcon()}
             </div>
         </div>  
         </Fragment>

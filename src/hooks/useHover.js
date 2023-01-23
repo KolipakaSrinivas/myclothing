@@ -1,28 +1,28 @@
-// import {useState, useEffect, useRef} from "react"
+import {useState, useEffect, useRef} from "react"
 
-// function myCart() {
-//     const [hovered, setHovered] = useState(false)
-//     const ref = useRef(null)
+function useHover() {
+    const [hovered, setHovered] = useState(false)
+    const ref = useRef(null)
     
-//     function enter() {
-//         setHovered(true)
-//     }
+    function enter() {
+        setHovered(true)
+    }
     
-//     function leave() {
-//         setHovered(false)
-//     }
+    function leave() {
+        setHovered(false)
+    }
     
-//     useEffect(() => {
-//         ref.current.addEventListener("mouseenter", enter)
-//         ref.current.addEventListener("mouseleave", leave)
+    useEffect(() => {
+        ref.current.addEventListener("mouseenter", enter)
+        ref.current.addEventListener("mouseleave", leave)
         
-//         return () => {    
-//             ref.current.removeEventListener("mouseenter", enter)
-//             ref.current.removeEventListener("mouseleave", leave)
-//         }
-//     }, [])
+        return () => {    
+            ref.current.removeEventListener("mouseenter", enter)
+            ref.current.removeEventListener("mouseleave", leave)
+        }
+    }, [])
     
-//     return [hovered, ref]
-// }
+    return [hovered, ref]
+}
 
-// export default useHover
+export default useHover

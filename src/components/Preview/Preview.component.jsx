@@ -28,21 +28,13 @@ function Preview({item,sri}){
     
 
     // useContext
-    const {cartItems,setCartItems} = useContext(Context)
+    const {removeFromCart,addToCart,cartItems,} = useContext(Context)
 
     
     
 
 
-    function addToCart(newItem) {
-        return setCartItems(prevItems => [...prevItems, newItem])
-    }
-
-
-    function removeFromCart(id) {
-        setCartItems(prevItems => prevItems.filter(item => item.id !== id))
-    }
-
+   
 
 
 

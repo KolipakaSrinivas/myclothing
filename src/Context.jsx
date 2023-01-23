@@ -9,14 +9,36 @@ function ContextProvider({children}) {
     
     const [cartItems, setCartItems] = useState([])
 
-    // console.log(cartItems)
+    function addToCart(newItem) {
+        return setCartItems(prevItems => [...prevItems, newItem])
+    }
+
+
+    function removeFromCart(id) {
+        setCartItems(prevItems => prevItems.filter(item => item.id !== id))
+    }
+
+    function emptyCart() {
+        setCartItems([])
+    }
+
  
     
     
 
     
     return (
-        <Context.Provider value={{setCartItems,cartItems}}>
+        <Context.Provider value=
+        {{
+            removeFromCart,
+            addToCart,
+            cartItems,
+            setCartItems,
+            emptyCart
+            
+            
+            
+        }}>
             {children}
         </Context.Provider>
     )
