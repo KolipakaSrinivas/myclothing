@@ -2,6 +2,8 @@ import React, { Fragment,useContext } from 'react'
 
 import { Context } from "../../Context"
 
+import { useNavigate } from 'react-router-dom';
+
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
@@ -12,6 +14,8 @@ import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCh
 import './shop-item.css'
 
 function ShopItem({item,}) {
+
+    const navigate =useNavigate()
 
     const {removeFromCart,addToCart,cartItems,} = useContext(Context)
 
@@ -40,8 +44,8 @@ function ShopItem({item,}) {
              style={{
             backgroundImage:`url(${item.imageUrl})`
          }} />
-            <div className='buy'>
-                <a href="#" className="btn-flip" data-back="Back Now" data-front="Buy"></a>
+            <div className='buy'    onClick={() => [addToCart(item), navigate('/cart')]}>
+                <a href="#" className="btn-flip" data-back="Back Now" data-front="Buy"/>
             </div>
             <div className='content'>
                <h1 className='title'>Price:{item.price}</h1>

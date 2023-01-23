@@ -7,6 +7,8 @@ import StoreIcon from '@mui/icons-material/Store';
 import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+
 
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
@@ -60,7 +62,7 @@ function Preview({item,sri}){
                 <div className="skeleton">
                     <img src={item.imageUrl} className="img" alt='hart'/>
                     <div className='icon'>
-                        <li><FavoriteBorderIcon/></li>
+                        <li> {hovered ? <FavoriteOutlinedIcon/> :<FavoriteBorderIcon/> }</li>
                          <li
                             onMouseEnter={() => setHovered(true)}
                             onMouseLeave={() => setHovered(false)}          
@@ -89,7 +91,6 @@ function Preview({item,sri}){
 
                         </li>
                     </div>
-                    <button  onClick={()=>navigate('/cart')}>hhh</button>
             </div>
 
             

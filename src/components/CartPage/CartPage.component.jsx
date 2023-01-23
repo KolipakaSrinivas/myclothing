@@ -9,11 +9,21 @@ import Srinivas from '../Cart-item/Srinivas'
 function CartPage() {
 
     const {cartItems,emptyCart} = useContext(Context)   
-    console.log(cartItems)
+    
+    
 
     const [ButtonText,setButtonText] = React.useState('Place Order')
 
-    const totalCost = 299 * cartItems.length
+    // const totalCost = 299 * cartItems.length
+
+    const initialValue =0
+
+    const totalCost = cartItems.map(item=>item.price).reduce(
+        (accumulator, currentValue) => accumulator + currentValue,
+        initialValue
+      )
+
+
     const totalCostDisplay = totalCost.toLocaleString("en-IN", {style: "currency", currency: "INR"})
 
 
