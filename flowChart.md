@@ -4,8 +4,16 @@
 # Intro File App.jsx
 
 
-                             __________App_____________
-                            |        |           |
-                        NavBar     Courser     Grid
-                                                 |
+
+
+                            ______________________APP_____________________
+                            |                |               |           |
+                          Home         ShopCollection      CartPage
+                           |            (ID)|                |
+                           |                |                |
+                    CollectionPreview    ShopItem          Srinivas           
+                           |    
+                           |
+                        Preview
+
 

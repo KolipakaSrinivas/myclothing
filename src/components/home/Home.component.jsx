@@ -59,12 +59,7 @@ function Home() {
     },[])
 
     return(
-        
-
-        <Fragment>
-            
-
-        
+        <Fragment>  
             <section>
                 <Filter getFilterResult={getFilterResult}/>
                 <div className='main'>

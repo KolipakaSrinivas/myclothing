@@ -19,6 +19,7 @@ function App() {
         <Route path='/' element={<Home/>}/>
         <Route path='/shop/:id' element={<ShopCollection/>} />
         <Route path='/cart' element={< CartPage/>}/>
+        
       </Routes>
     
     </div>
