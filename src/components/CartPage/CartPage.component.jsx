@@ -1,23 +1,18 @@
 import React, { Fragment,useContext } from 'react'
-
-
 import {Context} from "../../Context"
 
+    // cartItems
 import Srinivas from '../Cart-item/Srinivas'
 
 
 function CartPage() {
 
-    const {cartItems,emptyCart} = useContext(Context)   
-    
-    
-
+    // useState
+    const {cartItems,emptyCart} = useContext(Context)
     const [ButtonText,setButtonText] = React.useState('Place Order')
 
-    // const totalCost = 299 * cartItems.length
-
+        // total price  method reducing
     const initialValue =0
-
     const totalCost = cartItems.map(item=>item.price).reduce(
         (accumulator, currentValue) => accumulator + currentValue,
         initialValue
@@ -44,6 +39,7 @@ function CartPage() {
     return(
         <Fragment>
             <main className="cart-page">
+                
                <h1>Check out</h1>
                {cartItemElements}
 
@@ -55,8 +51,6 @@ function CartPage() {
                 </div> :
                 <p>You have no items in your cart.</p>
             }
-                
-
             </main>
         </Fragment>
     )

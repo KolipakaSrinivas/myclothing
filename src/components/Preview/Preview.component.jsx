@@ -1,30 +1,23 @@
 import React, { Fragment, useState,useContext } from 'react'
-
-
 import { Context } from "../../Context"
-
-import StoreIcon from '@mui/icons-material/Store';
-import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-
-import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-
-
-import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
 
 
 import { useNavigate } from 'react-router-dom';
 
 
-
-
-
-
+    // material incones
+import StoreIcon from '@mui/icons-material/Store';
+import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
+import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
 
 
 function Preview({item,sri}){
+
     
+        // useState
     const navigate =useNavigate()
     const [hovered, setHovered] = useState(false)
     
@@ -33,13 +26,6 @@ function Preview({item,sri}){
     const {removeFromCart,addToCart,cartItems,} = useContext(Context)
 
     
-    
-
-
-   
-
-
-
 
     function cartIcon() {
         const alreadyInCart = cartItems.some(kkk => kkk.id === item.id)
@@ -52,9 +38,6 @@ function Preview({item,sri}){
             return <ShoppingCartCheckoutOutlinedIcon onClick={() => addToCart(item)}/>
         }
     }
-
-
-   
 
     return(
         <Fragment>
@@ -92,9 +75,6 @@ function Preview({item,sri}){
                         </li>
                     </div>
             </div>
-
-            
-
         </Fragment>
     )
 }

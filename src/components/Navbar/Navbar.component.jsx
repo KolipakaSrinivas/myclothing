@@ -1,16 +1,13 @@
 import React, { Fragment } from 'react';
-
 import { useNavigate } from 'react-router-dom';
 
 
+
+// incone material
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-
-
-
 import RemoveShoppingCartIcon from '@mui/icons-material/RemoveShoppingCart';
-
-import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
+// import StoreOutlinedIcon from '@mui/icons-material/StoreOutlined';
 
 
 function Navbar () {

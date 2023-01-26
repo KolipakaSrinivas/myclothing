@@ -1,19 +1,19 @@
 import React, { Fragment,useContext } from 'react'
+import './shop-item.css'
 
+
+    // context
 import { Context } from "../../Context"
 
 import { useNavigate } from 'react-router-dom';
 
-
+    // material incone
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import ShoppingCartCheckoutOutlinedIcon from '@mui/icons-material/ShoppingCartCheckoutOutlined';
 
 
 
-
-import './shop-item.css'
-
-function ShopItem({item,}) {
+function ShopItem({item}) {
 
     const navigate =useNavigate()
 
@@ -31,11 +31,6 @@ function ShopItem({item,}) {
             return <ShoppingCartCheckoutOutlinedIcon onClick={() => addToCart(item)}/>
         }
     }
-
-
-
-
-
     return(
         <Fragment>
             <div className='menu-item'>

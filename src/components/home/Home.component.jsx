@@ -11,14 +11,11 @@ import CollectionPreview from '../CollectionPreview/CollectionPreview.component'
 
 
 function Home() {
-
-    const [shopData,setShopData] = useState()
-
-    const [filterData,setFilterData] = useState({})
-
-    // console.log(filterData)
     
-    // useState
+        // usestae
+    const [shopData,setShopData] = useState()
+    const [filterData,setFilterData] = useState({})
+    const [restaurantList,setRestaurantList] = useState([])
     
     const getshopData = async () => {
         const url = 'http://localhost:4000/api/get-shop-data'
@@ -28,41 +25,38 @@ function Home() {
     }
 
 
-    // const filter = async () => {
-    //     const url = "http://localhost:5003/api/filter";
-    //     const { data } = await axios.post(url, filterData);
-    //     if (data.status === true) {
-    //       setRestaurantList();
-    //     } else {
-    //       setRestaurantList([]);
-    //     }
-    //   };
+    const filter = async () => {
+        const url = "http://localhost:4000/api/filter";
+        const { data } = await axios.post(url,filterData);
+        if (data.status === true) {
+          setRestaurantList(data.restaurants);
+        } else {
+          setRestaurantList([]);
+        }
+      };
 
     const getFilterResult = (event,type) => {
 
         let {value} = event.target
+        console.log(value)
 
         let _filterObj = {}
 
         switch(type){
 
             case "title" :
-                _filterObj['title'] = value
+                _filterObj["title"] = value
 
         }
-        setFilterData({_filterObj})    
+        setFilterData({..._filterObj})    
     }
 
         // useEffect
     useEffect(()=>{
-        getshopData(shopData)
+        getshopData()
+        filter()
+
     },[])
-
-    
-
-
-
-    
 
     return(
         

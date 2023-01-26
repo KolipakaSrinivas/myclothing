@@ -8,7 +8,7 @@ function Filter({getFilterResult}) {
         <h2>filter</h2>
         <label>
           <input 
-          type="radio"
+          type="checkbox"
           onClick={event=>getFilterResult(event,"title")}
           value='Hates'
           name='shop'
@@ -18,7 +18,7 @@ function Filter({getFilterResult}) {
         </label>
         <label>
           <input 
-          type="radio"
+          type="checkbox"
           onClick={event=>getFilterResult(event,"title")}
           value='Sneakers'
           name='shop'
@@ -28,7 +28,7 @@ function Filter({getFilterResult}) {
         </label>
         <label>
           <input 
-          type="radio"
+          type="checkbox"
           onClick={event=>getFilterResult(event,"title")}
           value='Jackets'
           name='shop'
@@ -38,7 +38,7 @@ function Filter({getFilterResult}) {
         </label>
         <label>
           <input 
-          type="radio"
+          type="checkbox"
           onClick={event=>getFilterResult(event,"title")}
           value='Womens'
           name='shop'
@@ -48,7 +48,7 @@ function Filter({getFilterResult}) {
         </label>
         <label>
           <input 
-          type="radio"
+          type="checkbox"
           onClick={event=>getFilterResult(event,"title")}
           value='Mens'
           name='shop'
